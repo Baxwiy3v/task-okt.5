@@ -1,0 +1,116 @@
+Task 1) Method Task:
+     Min methodu yaradılır. Daxil olunan arrayın ən kiçik elementini tapır.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            int[] arr = { 22, 19, 20, 11, 54, 66, 5, 7, 34, 96 };
+            int enbalaca = MinElm(arr);
+
+            Console.WriteLine("erreyin en balaca elementi: " + enbalaca);
+
+        }
+
+        static int MinElm(int[] arr)
+        {
+
+            int min = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+                          
+            }
+            return min;
+        }
+    }
+}
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*///*//*/*/*/*/*/*/
+
+
+Task 2) Overload Tasks :
+ Area deyə Method(lar) yaradılır.
+1. Çevrənin sahəsi - S = p*r² (p=3)
+2. Düzbucaqlının sahəsi - S = a*b
+3. Düzbucaqlı paralelpipedin tam səthinin sahəsi - S=2(a*b+a*c+b*c)
+4. Üçbucaqlının daxilinə çəkilmiş çevrənin sahəsi - S=p*r; p=(a+b+c)/2
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            double radius = 2;
+            double cevresahesi = Cevreninsahesi(radius);
+            Console.WriteLine("cevrenin sahesi: " + cevresahesi);
+
+
+            double en = 10;
+            double uz = 32;
+            double duzbucaqli = duzbucaqlininsahesi(en,uz);
+            Console.WriteLine("duzbucaqlinin  sahesi:" + duzbucaqli);
+
+
+            double enn = 10;
+            double uzz = 3;
+            double huun = 2;
+            double düzbucaqlıparalelpiped = Düzbucaqlıparalelpipedinsahesi(enn, uzz, huun);
+            Console.WriteLine("Düzbucaqlı paralel pipedin sahesi :" + düzbucaqlıparalelpiped);
+
+
+            double enlik = 4;
+            double uzun = 2;
+            double hu = 6;
+            double Üçbucaq = Üçbucaqlınınsahəsi (enlik, uzun,hu);
+            Console.WriteLine("uçbucaqlınınsahesi:" + Üçbucaq);
+
+        }
+
+        public static double Cevreninsahesi(double r)
+        {
+            double p = 8; 
+            return r * r * p;
+        }
+
+        public static double duzbucaqlininsahesi(double a, double b)
+        {
+            return a * b;
+        }
+
+        public static double Düzbucaqlıparalelpipedinsahesi(double a, double b, double c)
+        {
+            return 2 * (a * b + a * c + b * c);
+        }
+
+        public static double Üçbucaqlınınsahəsi(double a, double b, double c)
+        {
+            double p = ( + b + c) /2 ;
+            double r = 10;
+            return p * r;
+        }
+
+
+    }
+}
